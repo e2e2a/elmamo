@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs') %>
+
+<body>
+
+    <%- include('./partials/navigation.ejs') %>
+
+<section id="register" style="background: url('/public/images/background-img.png') no-repeat;">
+    <div class="container ">
+      <div class="row my-5 py-5">
+        <div class=" col-md-12 my-5 ">
+          <h2 class="display-3 fw-normal text-center text-center mx-3 sm-mx-0">Reservation
+          </h2>
+          <table class="table table">
+            <thead>
+              <tr class="flex-nowrap">
+                <th>Fullname</th>
+                <th>contact</th>
+                <th>Boarding Name</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody class="flex-nowrap">
+              <% if(reservations && reservations.length > 0) { %>
+                <% reservations.forEach(reservation => { %>
+                  <%if(reservation.status !== 'approved' && reservation.status !== 'declined')  { %>
+                    <%- include('partials/admin-table-reservation', {reservation: reservation}); %>
+                    <% } %>
+                <% }); %>
+              <% } else { %>
+                <p>No products available.</p>
+             <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+<%- include('./partials/footer-link.ejs'); %>
+
+<%- include('./partials/copyrigth.ejs'); %>
+
+<%- include('./partials/footer.ejs'); %>

@@ -1,0 +1,115 @@
+<header>
+    <div class="container py-2">
+      <div class="row py-4 pb-0 pb-sm-4 align-items-center justify-content-between">
+
+        <div class="col-sm-4 col-lg-3 text-center text-sm-start">
+          <div class="main-logo">
+            <a href="index.html">
+              <p>BHR</p>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 ">
+          <div class="support-box text-end d-none d-xl-block">
+            <span class="fs-6 secondary-font text-muted">Phone</span>
+            <h5 class="mb-0">+980-34984089</h5>
+          </div>
+          <div class="support-box text-end d-none d-xl-block">
+            <span class="fs-6 secondary-font text-muted">Email</span>
+            <h5 class="mb-0">waggy@gmail.com</h5>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <hr class="m-0">
+    </div>
+
+    <div class="container">
+      <nav class="main-menu d-flex navbar navbar-expand-lg ">
+
+        <div class="d-flex d-lg-none align-items-end mt-3">
+          <ul class="d-flex justify-content-end list-unstyled m-0">
+            <li class="dropdown">
+              <a href="" class="mx-3 dropdown-toggle" role="button" id="auth" data-bs-toggle="dropdown"
+              aria-expanded="false">
+                <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="auth">
+                <% if(!userLogin) {%>
+                  <li><a href="/login" class="dropdown-item">Login</a></li>
+                <li><a href="/register" class="dropdown-item">Register</a></li>
+                <% } %>
+                <% if(userLogin && userLogin.role === 'admin') {%>
+                  <li><a href="/boarding/create" class="dropdown-item">Add Boarding House</a></li>
+                  <li><a href="/approval" class="dropdown-item">Approval</a></li>
+                <% }else{ %>
+                  <li><a href="shop.html" class="dropdown-item">Reservation</a></li>
+                <% } %>
+                <% if(userLogin) {%>
+                  <li><a href="shop.html" class="dropdown-item">Logout</a></li>
+                <% } %>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+          <div class="offcanvas-header justify-content-center">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body justify-content-end">
+            
+
+            <div class="d-none d-lg-flex align-items-end">
+              <ul class="d-flex justify-content-end list-unstyled m-0">
+                <li class=" dropdown">
+                  <a href="" class="mx-3 dropdown-toggle" role="button" id="auth" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="auth">
+                    <% if(!userLogin) {%>
+                      <li><a href="/login" class="dropdown-item">Login</a></li>
+                    <li><a href="/register" class="dropdown-item">Register</a></li>
+                    <% } %>
+                    <% if(userLogin && userLogin.role === 'admin') {%>
+                      <li><a href="/boarding/create" class="dropdown-item">Add Boarding House</a></li>
+                      <li><a href="/approval" class="dropdown-item">Approval</a></li>
+                    <% }else{ %>
+                      <li><a href="shop.html" class="dropdown-item">Reservation</a></li>
+                    <% } %>
+                    <% if(userLogin) {%>
+                      <li><a href="/logout" class="dropdown-item">Logout</a></li>
+                    <% } %>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+
+
+    </div>
+  </header>

@@ -1,0 +1,22 @@
+<div class="item col-md-4 col-lg-3 my-4">
+    <div class="card position-relative">
+      <a href=""><img src="<%= boarding.imgUrl %>" class="img-fluid rounded-4" alt="image"></a>
+      <div class="card-body p-0">
+        <a href="">
+          <h3 class="card-title pt-4 m-0"><%= boarding.name %></h3>
+        </a>
+
+        <div class="card-text">
+
+          <h3 class="secondary-font text-primary"><%= boarding.contact %></h3>
+
+          <div class="d-flex flex-wrap mt-3 ">
+            <a href="/reserve/create/<%= boarding._id %>" class="btn-cart me-3 px-4 pt-3 pb-3 w-100 text-center">
+              <h5 class="text-uppercase m-0">Reserve</h5>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

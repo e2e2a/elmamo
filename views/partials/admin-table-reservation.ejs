@@ -1,0 +1,11 @@
+<tr class="">
+    <td><%= reservation.lastname %>, <%= reservation.firstname %> <%= reservation.middlename %></td>
+    <td><%= reservation.contact %></td>
+    <td><%= reservation.boardingId.name %></td>
+    <td><%= reservation.status %></td>
+    <td><form action="" method="post">
+      <input type="hidden" name="reservationId" value="<%= reservation._id %>">
+      <button type="submit" class="btn btn-success" name="button" value="approved">Approved</button>
+      <button type="submit" class="btn btn-danger" name="button" value="declined">Declined</button>
+    </form></td>
+  </tr>
